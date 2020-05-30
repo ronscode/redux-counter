@@ -8,9 +8,24 @@ const initialState = {
   count: 0,
 };
 
+const INCREMENT = 'INCREMENT';
+
+const incrementValue = () => ({
+  type: INCREMENT,
+});
+
 const reducer = (state = initialState, action) => {
+  if (action.type === INCREMENT) {
+    return {
+      count: state.count + 1,
+    }
+  }
+
+
   return state;
-}
+};
+
+const store = createStore(reducer);
 
 import './styles.scss';
 
